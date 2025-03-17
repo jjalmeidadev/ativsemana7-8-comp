@@ -105,15 +105,14 @@ function analisarCredito2() {
 ```
 Se ambas as funções forem executadas com os valores fornecidos, qual será a saída exibida no console?
 
-A) Ambas as funções exibirão: 'Seu crédito foi negado. Saldo disponível: -600.'
+A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.' **X = A alternativa correta é a A, pois após as somas dos valores de todos os elementos da lista compras (4600), e a subtração deste novo valor do limite, resta 400.**
+
 
 B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
 
-C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.'
+C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
 
-D) Ambas as funções exibirão: 'Seu crédito foi negado. Saldo disponível: -200.'
-
-**E) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'??????**
+D) Ambas as funções exibirão: 'Seu crédito foi aprovado Saldo disponível: 500.'
 ______
 
 **3)** Considere o seguinte trecho de código em JavaScript:
@@ -261,6 +260,8 @@ Pedidos de R$200,00 ou mais → "Frete grátis!"
 ```
 Implemente um pseudocódigo que receba o valor total da compra e exiba a classificação correta do frete para o cliente.
 
+**RESPOSTA**
+
 ```javascript
 
 var criterios = [50, 199, 200]
@@ -299,23 +300,45 @@ Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subc
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na 
 quilometragem e eficiência do veículo.
 
+**RESPOSTA**
+
 ```javascript
 class Veiculo {
-let km = 0
-let eficiencia = 0
+  constructor() {
+    this.km = 0;
+    this.eficiencia = 30; // km/l
+    this.modelo = "modelo";
+    this.ano = 1;
+  }
 
-constructor (){
-modelo: 'modelo'
-ano: 1
+  CalcularConsumo(km) {
+    var calculo = km / this.eficiencia;
+    return calculo;
+  }
 }
-CalcularConsumo (km){
-
-
 
 class Carro extends Veiculo {
-constructor(){
-super()
+  constructor() {
+    super();
+      this.eficiencia = 10;
+      this.modelo = "Fusca";
+      this.ano = 2000;
+  }
 }
+
+class Moto extends Veiculo {
+  constructor() {
+    super();
+    this.eficiencia = 20;
+    this.modelo = "Motocross";
+    this.ano = 2002;
+  }
+}
+
+console.log(new Carro().CalcularConsumo(100));
+console.log(new Moto().CalcularConsumo(400));
+
+
 ```
 ______
 
@@ -327,7 +350,16 @@ Implemente a lógica dessa simulação em pseudocódigo, considerando a seguinte
 
 Considere a fórumla de atualização velocidade:
 ```
-    velocidade = velocidadeInicial - desaceleracao * tempo
+var velocidadeInicial = 100 //km/h
+var alturaInicial = 10000 //km
+var desaceleracao = 2 //km/h²
+var tempo = 0 
+var nivelseguro = 10 //km/h
+var limitetempo = 1 //hora
+var limitedesaceleracao = 5 //km/h²
+
+while ()
+
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
 ______
