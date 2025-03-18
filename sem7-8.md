@@ -107,7 +107,6 @@ Se ambas as funções forem executadas com os valores fornecidos, qual será a s
 
 A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.' **X = A alternativa correta é a A, pois após as somas dos valores de todos os elementos da lista compras (4600), e a subtração deste novo valor do limite, resta 400.**
 
-
 B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
 
 C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
@@ -349,19 +348,45 @@ Entretanto, a sonda não pode ultrapassar um tempo máximo de descida para evita
 Implemente a lógica dessa simulação em pseudocódigo, considerando a seguinte equação para atualização da velocidade:
 
 Considere a fórumla de atualização velocidade:
-```
-var velocidadeInicial = 100 //km/h
-var alturaInicial = 10000 //km
-var desaceleracao = 2 //km/h²
-var tempo = 0 
-var nivelseguro = 10 //km/h
-var limitetempo = 1 //hora
-var limitedesaceleracao = 5 //km/h²
+``` velocidade = velocidadeInicial - desaceleracao * tempo```
 
-while ()
-
-```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+
+**RESPOSTA**
+
+```javascript
+
+
+var velocidadeInicial = 0 //m/s
+var desaceleracao = 0 
+var tempo = 0 
+var nivelSeguro = 0 
+var limiteTempo = 0 //segundos
+var limiteDesaceleracao = 0 
+
+function desacelerarNave(velocidadeInicial, desaceleracao, nivelSeguro, limiteTempo, limiteDesaceleracao) {
+    while (velocidadeInicial > nivelSeguro) {
+        tempo += 1;
+        let velocidade = velocidadeInicial -= (desaceleracao * tempo);
+        if (tempo > limiteTempo) {
+            console.log('Operação de pouso falha');
+            break
+        }
+        else if (desaceleracao > limiteDesaceleracao) {
+            console.log('Instabilidade no pouso');
+            break
+        }
+        else {
+            console.log(`A velocidade atual é: ${velocidade} e o tempo passado é: ${tempo} segundos`)
+        }
+    }
+}
+
+desacelerarNave(80, 2, 10, 15, 5) //teste
+
+
+```
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
