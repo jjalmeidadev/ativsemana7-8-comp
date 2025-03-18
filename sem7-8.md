@@ -41,7 +41,7 @@ console.log("O produto dos valores é:", produto);
 ```
 Qual das seguintes alternativas melhor descreve o que o código faz?
 
-A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console. **X - A alternativa A é a correta, pois 10/3 tem resto 1 e 2*6 = 12>10, 
+A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console. **X - A alternativa A é a correta, pois 10/3 tem resto 1 e 2 * 6 = 12>10, 
 além de que 9<10, ou seja, todas as condições foram atendidas e, independentemente da presença do operador ou "||", o retorno será true. O produto da lista valores também é calculado através da operação
 1*= cada valor da lista, provocando uma repetição que inclui todos os valores dentro dela multiplicados entre si, sendo imprimidos ao final com o comando console.log.**
 
