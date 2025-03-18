@@ -270,7 +270,7 @@ function calcFrete(compra) {
     if (compra < criterios[0]) {
         console.log('Frete não disponível!');
     }
-    else if (compra >= criterios[0] && compra < criterios[1]) {
+    else if (compra >= criterios[0] && compra <= criterios[1]) {
         console.log('Frete com custo adicional!');
     }
     else { console.log('Frete grátis!'); }
